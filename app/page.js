@@ -43,15 +43,15 @@ const LandingPage = () => {
 
   useEffect(() => {
     const clientCountInterval = setInterval(() => {
-      if (clients < 200) setClients((prev) => Math.min(prev + 5, 500));
+      if (clients < 200) setClients((prev) => Math.min(prev + 10, 500));
     }, 50);
 
     const customerCountInterval = setInterval(() => {
-      if (customers < 50000) setCustomers((prev) => Math.min(prev + 50, 50000));
+      if (customers < 50000) setCustomers((prev) => Math.min(prev + 1000, 50000));
     }, 30);
 
     const orderCountInterval = setInterval(() => {
-      if (orders < 100000) setOrders((prev) => Math.min(prev + 10, 100000));
+      if (orders < 100000) setOrders((prev) => Math.min(prev + 1000, 100000));
     }, 40);
 
     const projectCountInterval = setInterval(() => {
