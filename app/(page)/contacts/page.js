@@ -24,7 +24,7 @@ const Contact = () => {
       <div className="max-w-screen-lg w-full flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden">
         
         {/* Left Side: Contact Form */}
-        <div className="w-full md:w-1/2 p-8 bg-blue-700 text-white">
+        <div className="w-full md:w-1/2 p-8 bg-blue-300 text-white">
           <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
