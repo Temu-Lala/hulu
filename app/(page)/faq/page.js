@@ -24,13 +24,13 @@ const faqs = [
   {
     question: "Where is your location?",
     answer:
-      "Our office is located in Addis Ababa, Dembel, Amhara Bank Head Office, 1st Floor, Room 210.",
+      "Our office is located in Addis Ababa, Dembel, Amhara Bank Head Office, 1st Floor, Room 112.",
     icon: <FiMapPin className="text-red-500 text-5xl" />,
   },
   {
     question: "How much do we pay for registration?",
     answer:
-      "The registration fee is only 100 birr. This one-time payment allows you to access our job placement services.",
+      "no commission is taken for registrations.",
     icon: <FiDollarSign className="text-green-500 text-5xl" />,
   },
   {
