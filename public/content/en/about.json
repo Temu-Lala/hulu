@@ -1,0 +1,48 @@
+{
+    "heroSection": {
+      "title": "About HULU General Commission",
+      "description": "HULU General Commission is a forward-thinking organization dedicated to creating innovative commission solutions for businesses of all sizes. Our mission is to optimize sales strategies and build lasting partnerships for sustainable growth."
+    },
+    "storySection": {
+      "title": "Our Story",
+      "description": "Founded in 2024, HULU General Commission started with a simple goal: to revolutionize the way companies approach sales commissions."
+    },
+    "missionSection": {
+      "title": "Our Mission",
+      "description": "Our mission is to empower businesses with strategic commission programs that drive growth, enhance performance, and strengthen partnerships."
+    },
+    "valuesSection": {
+      "title": "Our Values",
+      "values": ["Integrity", "Innovation", "Collaboration", "Results-Oriented"]
+    },
+    "teamSection": {
+      "members": [
+        {
+          "name": "Getfam Hotel Manager",
+          "role": "GETFAM Hotel",
+          "description": "⭐⭐⭐⭐⭐ Excellent Service & Professionalism Hulu General Commissions has exceeded our expectations! Their dedication, professionalism, and quality service make them a trusted partner in every aspect. Highly recommended!",
+          "imgSrc": "/images/image4.jpg"
+        },
+        {
+          "name": "Bemnet Hotel Manager",
+          "role": "Manager",
+          "description": "⭐⭐⭐⭐⭐ Reliable & Trustworthy We are extremely satisfied with the outstanding services provided by Hulu General Commissions. Their commitment to excellence and attention to detail make them a top choice!",
+          "imgSrc": "/images/image16.png"
+        },
+        {
+          "name": "Siyum Belayneh ",
+          "role": "Developer",
+          "description": "⭐⭐⭐⭐⭐ Hulu General Commissions delivers high-quality service with efficiency and professionalism. Truly a five-star service!",
+          "imgSrc": "/images/image8n.png"
+        }
+      ]
+    },
+    "achievementsSection": {
+      "title": "Our Achievements",
+      "description": "Over the years, we have proudly achieved several milestones including [List Key Achievements]."
+    },
+    "ctaSection": {
+      "title": "Ready to Take the Next Step?",
+      "buttonText": "Contact Us"
+    }
+  }

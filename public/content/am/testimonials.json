@@ -1,0 +1,61 @@
+{
+    "pageTitle": "ደንበኞቻችን ምን ይላሉ (AM)",
+    "testimonials": [
+      {
+        "name": "ቴድሮስ (AM)",
+        "role": "ዋና ሥራ አስፈፃሚ፣ የቴክ ኢኖቬሽንስ (AM)",
+        "image": "/images/T.webt",
+        "feedback": "ይህ አገልግሎት ንግዴን በፍጥነት እንድሰፋ ረድቶኛል። መፍትሄዎቻቸው ከፍተኛ ደረጃ ያላቸው ናቸው፣ እና ቡድኑ በጣም ሙያዊ ነው። (AM)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "ፋሲካ (AM)",
+        "role": "የግብይት ዳይሬክተር፣ የፈጠራ ኤጀንሲ (AM)",
+        "image": "/images/f.png",
+        "feedback": "ውጤቶቹ አስደናቂ ናቸው! ለዝርዝር ጉዳዮች ትኩረት መስጠት እና ጥብቅ የጊዜ ገደቦችን ማሟላት መቻል ልዩ ነበር። (AM)",
+        "iconName": "FaSmile",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "እመቤት (AM)",
+        "role": "መሥራች፣ ጅምር X (AM)",
+        "image": "/images/e.png",
+        "feedback": "ለአሠራራችን ለውጥ አምጪ ነው። አቀራረባቸው ፈጠራ ያለው ነው፣ እና የደንበኞችን ፍላጎት በትክክል ይገነዘባሉ። (AM)",
+        "iconName": "FaStar",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "ግርማ (AM)",
+        "role": "CTO፣ FinTech Solutions (AM)",
+        "image": "/images/g.jpg",
+        "feedback": "የቡድኑ ድጋፍ እና እውቀት ከጊዜ በፊት ግቦቻችን ላይ እንድንደርስ ረድቶናል። በጣም ጥሩ አገልግሎት! (AM)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "ፍጹም (AM)",
+        "role": "COO፣ HealthTech (AM)",
+        "image": "/images/f.png",
+        "feedback": "ፕሮፌሽናል፣ ቀልጣፋ እና ሁልጊዜም ትክክለኛ። አገልግሎታቸው ስራዎቻችንን እንድናቀላጥፍ ረድቶናል። (AM)",
+        "iconName": "FaStar",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "እስጢፋኖስ (AM)",
+        "role": "መሥራች፣ የፈጠራ ስቱዲዮዎች (AM)",
+        "image": "/images/e.png",
+        "feedback": "ከመጀመሪያ እስከ መጨረሻ ድረስ አስደናቂ ተሞክሮ። ቡድኑ ሁሉንም ነገር በጣም ቀላል እና እንከን የለሽ አድርጎታል። (AM)",
+        "iconName": "FaSmile",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "ዳዊት (AM)",
+        "role": "VP of Sales, Marketing Hub (AM)",
+        "image": "/images/d.jpg",
+        "feedback": "መፍትሄዎቻቸው የሽያጭ ሂደታችንን እንድናሻሽል አስችሎናል፣ ይህም ፈጣን እና የበለጠ አስተማማኝ እንዲሆን አድርጎታል። (AM)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      }
+    ]
+  }

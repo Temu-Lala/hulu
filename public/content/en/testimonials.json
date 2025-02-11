@@ -1,0 +1,61 @@
+{
+    "pageTitle": "What Our Clients Say (EN)",
+    "testimonials": [
+      {
+        "name": "Tedros (EN)",
+        "role": "CEO, Tech Innovations (EN)",
+        "image": "/images/T.webt",
+        "feedback": "This service helped me scale my business rapidly. Their solutions are top-notch, and the team is highly professional. (EN)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "Fasika (EN)",
+        "role": "Marketing Director, Creative Agency (EN)",
+        "image": "/images/f.png",
+        "feedback": "I am impressed by the results! The attention to detail and the ability to meet tight deadlines was exceptional. (EN)",
+        "iconName": "FaSmile",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "Emebet (EN)",
+        "role": "Founder, StartUp X (EN)",
+        "image": "/images/e.png",
+        "feedback": "A game-changer for our operations. Their approach is innovative, and they truly understand customer needs. (EN)",
+        "iconName": "FaStar",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "Girum (EN)",
+        "role": "CTO, FinTech Solutions (EN)",
+        "image": "/images/g.jpg",
+        "feedback": "The team's support and expertise helped us reach our targets ahead of time. Excellent service! (EN)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "Ftsum (EN)",
+        "role": "COO, HealthTech (EN)",
+        "image": "/images/f.png",
+        "feedback": "Professional, efficient, and always on point. Their service helped us streamline our operations. (EN)",
+        "iconName": "FaStar",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "Estifanos (EN)",
+        "role": "Founder, Creative Studios (EN)",
+        "image": "/images/e.png",
+        "feedback": "A fantastic experience from start to finish. The team made everything so simple and seamless. (EN)",
+        "iconName": "FaSmile",
+        "rating": "⭐⭐⭐⭐⭐"
+      },
+      {
+        "name": "David (EN)",
+        "role": "VP of Sales, Marketing Hub (EN)",
+        "image": "/images/d.jpg",
+        "feedback": "Their solutions enabled us to enhance our sales process, making it faster and more reliable. (EN)",
+        "iconName": "FaThumbsUp",
+        "rating": "⭐⭐⭐⭐⭐"
+      }
+    ]
+  }

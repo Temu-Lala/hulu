@@ -1,0 +1,66 @@
+{
+    "pageTitle": "አገልግሎቶቻችን (AM)",
+    "learnMoreText": "ተጨማሪ ይወቁ (AM)",
+    "services": [
+      {
+        "title": "የሥራ ዕድል ቅጥር (AM)",
+        "description": "ሥራ ፈላጊዎችን ከአሠሪዎች ጋር እናገናኛለን፣ ቅጥርን እንከን የለሽ እና ቀልጣፋ እናደርጋለን። (AM)",
+        "iconName": "FiBriefcase"
+      },
+      {
+        "title": "ማስተዋወቂያዎች (AM)",
+        "description": "በእኛ ስልታዊ ግብይት እና የማስተዋወቂያ አገልግሎቶች የምርት ስምዎን ታይነት ያሳድጉ። (AM)",
+        "iconName": "FiTrendingUp"
+      },
+      {
+        "title": "ሸቀጦችን መግዛትና መሸጥ (AM)",
+        "description": "ለሁሉም ዓይነት ዕቃዎች ደህንነቱ የተጠበቀ እና ከችግር ነጻ የሆነ ግብይትን እናመቻቻለን። (AM)",
+        "iconName": "FiShoppingCart"
+      },
+      {
+        "title": "የውጭ ንግድ (Import & Export) (AM)",
+        "description": "ለንግድዎ ፍላጎት በሚስማማ ዓለም አቀፍ የንግድ መፍትሄዎች ንግድዎን ያስፋፉ። (AM)",
+        "iconName": "FiGlobe"
+      },
+      {
+        "title": "የንግድ ምክር እና ማስተዋወቂያዎች (AM)",
+        "description": "ንግድዎን እንዲያሳድጉ ለማገዝ የባለሙያ ምክር እና የማስተዋወቂያ ስልቶችን እንሰጣለን። (AM)",
+        "iconName": "FiUsers"
+      },
+      {
+        "title": "የሰው ኃይል አገልግሎቶች (AM)",
+        "description": "በሰው ኃይል መፍትሄዎቻችን ለንግድ ፍላጎቶችዎ የተዋጣላቸው ሰራተኞችን ያግኙ። (AM)",
+        "iconName": "FiBriefcase"
+      },
+      {
+        "title": "ቤት መግዛት፣ መሸጥ እና ማከራየት (AM)",
+        "description": "ለሽያጭ፣ ኪራይ ወይም ግዢ ቤቶች ላይ ምርጡን ቅናሾች ያግኙ። (AM)",
+        "iconName": "FiHome"
+      },
+      {
+        "title": "መኪና መግዛት፣ መሸጥ እና ማከራየት (AM)",
+        "description": "መኪና እየገዙ፣ እየሸጡ ወይም እየተከራዩ ይሁን፣ እኛ ሽፋን ሰጥተናል። (AM)",
+        "iconName": "FaCar"
+      },
+      {
+        "title": "መሬት መግዛትና መሸጥ (AM)",
+        "description": "በሙያዊ እርዳታ እና በህጋዊ ግልጽነት የመሬት ስምምነቶችን ያስጠብቁ። (AM)",
+        "iconName": "FiMap"
+      },
+      {
+        "title": "የማህበራዊ ሚዲያ አስተዳደር እና ማስተዋወቂያዎች (AM)",
+        "description": "በእኛ የባለሙያ የማህበራዊ ሚዲያ አስተዳደር አገልግሎቶች የመስመር ላይ ተገኝነትዎን ያሳድጉ። (AM)",
+        "iconName": "FiShare2"
+      },
+      {
+        "title": "ሶፍትዌር፣ ድህረ ገጽ እና የሞባይል መተግበሪያ ልማት (AM)",
+        "description": "ለንግድዎ የተበጁ ዘመናዊ፣ ሊሰፉ የሚችሉ የሶፍትዌር መፍትሄዎችን እንገነባለን። (AM)",
+        "iconName": "FiCode"
+      },
+      {
+        "title": "የማስታወቂያ ቁሳቁሶች (Brochures, Stickers, T-Shirts, LED Screens) (AM)",
+        "description": "ከፍተኛ ጥራት ያላቸውን የማስታወቂያ ቁሳቁሶችን ለከፍተኛ ተጽዕኖ የተነደፉ ያግኙ። (AM)",
+        "iconName": "FiLayers"
+      }
+    ]
+  }

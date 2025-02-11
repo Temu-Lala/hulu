@@ -1,0 +1,18 @@
+{
+    "heroSection": {
+      "title": "Hulu General Commissions (EN)",
+      "description": "We work to connect job seekers with employers, boost your brand’s visibility, facilitate secure transactions, expand your business internationally, offer expert business advice, provide skilled manpower, help with real estate and vehicle deals, manage your social media presence, develop custom software and apps, and create high-impact advertising materials for your business. (EN)"
+    },
+    "impactSection": {
+      "heading": "Our Impact (EN)",
+      "stats": [
+        { "count": "500", "label": "Clients (EN)" },
+        { "count": "50000", "label": "Customers (EN)" },
+        { "count": "100000", "label": "Orders Processed (EN)" },
+        { "count": "34", "label": "Projects Delivered (EN)" }
+      ]
+    },
+    "trustedSection": {
+      "heading": "Trusted by Leading Companies (EN)"
+    }
+  }

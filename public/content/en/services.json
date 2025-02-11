@@ -1,0 +1,66 @@
+{
+    "pageTitle": "Our Services (EN)",
+    "learnMoreText": "Learn More (EN)",
+    "services": [
+      {
+        "title": "Work Opportunity Hiring (EN)",
+        "description": "We connect job seekers with employers, making hiring seamless and efficient. (EN)",
+        "iconName": "FiBriefcase"
+      },
+      {
+        "title": "Promotions (EN)",
+        "description": "Boost your brand's visibility with our strategic marketing and promotional services. (EN)",
+        "iconName": "FiTrendingUp"
+      },
+      {
+        "title": "Buying & Selling Goods (EN)",
+        "description": "We facilitate secure and hassle-free transactions for all types of goods. (EN)",
+        "iconName": "FiShoppingCart"
+      },
+      {
+        "title": "Import & Export (EN)",
+        "description": "Expand your business with international trade solutions tailored to your needs. (EN)",
+        "iconName": "FiGlobe"
+      },
+      {
+        "title": "Business Advisory & Promotions (EN)",
+        "description": "We provide expert advice and promotional strategies to help your business grow. (EN)",
+        "iconName": "FiUsers"
+      },
+      {
+        "title": "Manpower Services (EN)",
+        "description": "Find skilled workers for your business needs with our manpower solutions. (EN)",
+        "iconName": "FiBriefcase"
+      },
+      {
+        "title": "Home Buying, Selling & Renting (EN)",
+        "description": "Get the best deals on homes for sale, rent, or purchase. (EN)",
+        "iconName": "FiHome"
+      },
+      {
+        "title": "Car Buying, Selling & Renting (EN)",
+        "description": "Whether you’re buying, selling, or renting a car, we have you covered. (EN)",
+        "iconName": "FaCar"
+      },
+      {
+        "title": "Land Buying & Selling (EN)",
+        "description": "Secure land deals with professional assistance and legal transparency. (EN)",
+        "iconName": "FiMap"
+      },
+      {
+        "title": "Social Media Management & Promotions (EN)",
+        "description": "Grow your online presence with our expert social media management services. (EN)",
+        "iconName": "FiShare2"
+      },
+      {
+        "title": "Software, Website & Mobile App Development (EN)",
+        "description": "We build modern, scalable software solutions tailored to your business. (EN)",
+        "iconName": "FiCode"
+      },
+      {
+        "title": "Advertising Materials (Brochures, Stickers, T-Shirts, LED Screens) (EN)",
+        "description": "Get high-quality advertising materials designed for maximum impact. (EN)",
+        "iconName": "FiLayers"
+      }
+    ]
+  }

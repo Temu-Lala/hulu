@@ -1,0 +1,61 @@
+{
+  "Navbar": {
+      "about": "About",
+      "blog": "Blog",
+      "services": "Services",
+      "testimony": "Testimony",
+      "faq": "FAQ",
+      "contact": "Contact"
+  },
+  "AboutPage": {
+      "heroTitle": "About HULU General Commission",
+      "heroDescription": "HULU General Commission is a forward-thinking organization dedicated to creating innovative commission solutions for businesses of all sizes. Our mission is to optimize sales strategies and build lasting partnerships for sustainable growth.",
+      "ourStoryTitle": "Our Story",
+      "ourStoryDescription": "Founded in 2024, HULU General Commission started with a simple goal: to revolutionize the way companies approach sales commissions.",
+      "missionTitle": "Our Mission",
+      "missionDescription": "Our mission is to empower businesses with strategic commission programs that drive growth, enhance performance, and strengthen partnerships.",
+      "valuesTitle": "Our Values",
+      "valuesIntegrity": "Integrity",
+      "valuesInnovation": "Innovation",
+      "valuesCollaboration": "Collaboration",
+      "valuesResults": "Results-Oriented",
+      "achievementsTitle": "Our Achievements",
+      "achievementsDescription": "Over the years, we have proudly achieved several milestones including [List Key Achievements].",
+      "ctaTitle": "Ready to Take the Next Step?",
+      "ctaButton": "Contact Us"
+  },
+  "BlogPage": {
+      "title": "Hulu Blog & Insights",
+      "description": "Explore our latest articles and updates on sales strategies, business growth, and more.",
+      "post1Title": "TikTok Marketing Strategies",
+      "post1Description": "Discover effective TikTok strategies to boost your brand and reach a wider audience.",
+      "post1ReadMore": "Visit our TikTok",
+      "post2Title": "YouTube Growth Tips",
+      "post2Description": "Learn how to leverage YouTube to expand your reach and engage with your audience.",
+      "post2ReadMore": "Visit our YouTube Channel",
+      "workshopTitle": "Upcoming Workshops",
+      "workshopDescription": "Join our workshops to gain hands-on experience and in-depth knowledge.",
+      "stayUpdatedTitle": "Stay Updated",
+      "stayUpdatedDescription": "Subscribe to our channel for the latest updates and insights.",
+      "subscribeButton": "Subscribe Now"
+  },
+  "ContactPage": {
+      "header": "Contact & Location",
+      "subHeader": "We’d love to hear from you! Reach out to us anytime.",
+      "formTitle": "Get in Touch",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "buttonText": "Send Message",
+      "contactTitle": "Contact Us"
+  },
+  "FAQPage": {
+      "header": "Hulu General Commission FAQ"
+  },
+  "ServicesPage": {
+      "header": "Our Services"
+  },
+  "TestimonialsPage": {
+      "header": "What Our Clients Say"
+  }
+
+}

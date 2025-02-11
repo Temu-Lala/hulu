@@ -1,0 +1,48 @@
+
+
+
+  {
+    "pageTitle": "Frequently Asked Questions (FAQ) (EN)",
+    "faqs": [
+      {
+        "question": "What services does Hulu General Commission offer? (EN)",
+        "answer": "Hulu General Commission offers a wide range of services including work opportunity hiring, promotions, buying & selling goods, import & export, business advisory, manpower services, real estate, car sales & rentals, land sales, social media management, software development, and advertising materials. (EN)",
+        "iconName": "FiBriefcase"
+      },
+      {
+        "question": "Where is Hulu General Commission located? (EN)",
+        "answer": "Our main office is located in the heart of Addis Ababa, Ethiopia. We serve clients both locally and internationally through our digital platforms. (EN)",
+        "iconName": "FiMapPin"
+      },
+      {
+        "question": "How are your service fees structured? (EN)",
+        "answer": "Our service fees vary depending on the type of service and the scope of work. We ensure transparency in our pricing and provide detailed quotes tailored to your specific needs. Please contact us for a personalized consultation. (EN)",
+        "iconName": "FiDollarSign"
+      },
+      {
+        "question": "What is your process for service delivery? (EN)",
+        "answer": "Our service delivery process is designed to be efficient and client-focused. It typically involves an initial consultation, proposal and agreement, execution of services, and final review and feedback. We keep our clients informed at every stage. (EN)",
+        "iconName": "FiRefreshCcw"
+      },
+      {
+        "question": "Do you offer international services? (EN)",
+        "answer": "Yes, Hulu General Commission provides import & export services and business advisory services to international clients. We leverage our global network to facilitate international trade and business growth. (EN)",
+        "iconName": "FiGlobe"
+      },
+      {
+        "question": "What payment methods do you accept? (EN)",
+        "answer": "We accept various payment methods including bank transfers, credit cards, and mobile money solutions to accommodate our diverse clientele. Specific payment options can be discussed during service agreement. (EN)",
+        "iconName": "FiCreditCard"
+      },
+      {
+        "question": "How do you ensure the security of transactions? (EN)",
+        "answer": "Security is paramount at Hulu General Commission. We utilize secure payment gateways and follow best practices in data protection to ensure all transactions are safe and confidential. (EN)",
+        "iconName": "FiShield"
+      },
+      {
+        "question": "How can I get started with your services? (EN)",
+        "answer": "Getting started is easy! Simply reach out to us through our contact channels - phone, email, or social media. We will schedule a consultation to understand your needs and outline how we can assist you. (EN)",
+        "iconName": "FiCheckCircle"
+      }
+    ]
+  }

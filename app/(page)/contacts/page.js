@@ -1,78 +1,116 @@
 "use client";
 
-import { useState } from "react";
 
-const Contact = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+import { useState, useContext, useEffect } from "react";
+import { LanguageContext } from '../../contexts/LanguageContext';
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email:", email);
-    console.log("Message:", message);
-  };
+const ContactPage = () => {
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [pageData, setPageData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const { language } = useContext(LanguageContext);
 
-  return (
-    <div className="min-h-screen  flex flex-col items-center justify-center py-10 px-4">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-extrabold text-blue-700">Contact & Location</h1>
-        <p className="text-lg text-gray-600 mt-2">We’d love to hear from you! Reach out to us anytime.</p>
-      </div>
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch(`/content/${language}/contacts.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const jsonData = await response.json();
+                setPageData(jsonData);
+            } catch (error) {
+                console.error("Could not fetch content:", error);
+                setPageData({ error: "Failed to load content." });
+            } finally {
+                setLoading(false);
+            }
+        };
 
-      {/* Contact Container */}
-      <div className="max-w-screen-lg w-full flex flex-col md:flex-row bg-white shadow-lg rounded-xl overflow-hidden">
-        
-        {/* Left Side: Contact Form */}
-        <div className="w-full md:w-1/2 p-8 bg-blue-300 text-white">
-          <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label htmlFor="email" className="block text-lg font-medium">Email</label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 mt-2 rounded-md bg-white text-black border border-blue-300 focus:ring-2 focus:ring-blue-400"
-              />
+        fetchData();
+    }, [language]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Email:", email);
+        console.log("Message:", message);
+        alert("Form submission is simulated. Check console for data.");
+    };
+
+    if (loading) {
+        return <p className="text-center">Loading content...</p>;
+    }
+
+    if (!pageData || pageData.error) {
+        return <p className="text-center">Error loading content.</p>;
+    }
+
+    return (
+        <div className="min-h-screen flex flex-col items-center justify-center py-10 px-4 bg-gray-50"> {/* Added bg-gray-50 for subtle background */}
+            {/* Header */}
+            <div className="text-center mb-12"> {/* Increased mb for more space */}
+                <h1 className="text-4xl font-extrabold text-blue-700 mb-4">{pageData.pageTitle}</h1> {/* Reduced mb here */}
+                <p className="text-lg text-gray-700 max-w-md mx-auto">{pageData.pageDescription}</p> {/* Improved text color and max-width for better readability */}
             </div>
-            <div>
-              <label htmlFor="message" className="block text-lg font-medium">Message</label>
-              <textarea
-                id="message"
-                required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-3 mt-2 rounded-md bg-white text-black border border-blue-300 focus:ring-2 focus:ring-blue-400"
-                rows={4}
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full mt-4 p-3 bg-white text-blue-700 font-bold rounded-md hover:bg-blue-100 transition duration-300 shadow-md"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
 
-        {/* Right Side: Map */}
-        <div className="w-full md:w-1/2 bg-gray-100">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1217.8691363976122!2d38.75396480467733!3d9.012176365442276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b855234891dad%3A0xaeb993c09217fc14!2zQW1oYXJhIEJhbmsgUy5DIEhRL-GLqOGKoOGIm-GIqyDhiaPhipXhiq0g4YqgLuGImyDhi4vhipMg4YiY4Yi14Yiq4Yur4Ymk4Ym1!5e1!3m2!1sen!2set!4v1738953709736!5m2!1sen!2set"
-            width="100%"
-            height="100%"
-            className="w-full h-[400px] md:h-full border-0 rounded-r-xl"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+            {/* Contact Container */}
+            <div className="max-w-screen-lg w-full flex flex-col md:flex-row bg-white shadow-xl rounded-2xl overflow-hidden md:space-x-8"> {/* Increased shadow, rounded corners, and horizontal spacing */}
+
+                {/* Left Side: Contact Form */}
+                <div className="w-full md:w-1/2 p-8 md:p-10 bg-blue-100 text-blue-800"> {/* Softened blue background and text color */}
+                    <h2 className="text-2xl font-semibold mb-8">{pageData.formTitle}</h2> {/* Increased mb */}
+                    <form onSubmit={handleSubmit} className="space-y-6"> {/* Increased space-y */}
+                        <div>
+                            <label htmlFor="email" className="block text-lg font-medium mb-2">{pageData.emailLabel}</label> {/* Added mb to label */}
+                            <input
+                                id="email"
+                                type="email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full p-3 mt-1 rounded-md bg-white text-black border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-300" /* Refined input styling */
+                                placeholder="Your Email" /* Added placeholder */
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="message" className="block text-lg font-medium mb-2">{pageData.messageLabel}</label> {/* Added mb to label */}
+                            <textarea
+                                id="message"
+                                required
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                className="w-full p-3 mt-1 rounded-md bg-white text-black border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-300" /* Refined textarea styling */
+                                rows={5} /* Increased rows for message */
+                                placeholder="Your Message" /* Added placeholder */
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            className="w-full mt-6 p-3 bg-blue-700 text-white font-bold rounded-md hover:bg-blue-800 transition duration-300 shadow-md focus:shadow-lg" /* Refined button styling with hover and focus effects */
+                        >
+                            {pageData.submitButtonText}
+                        </button>
+                    </form>
+                </div>
+
+                {/* Right Side: Map */}
+                <div className="w-full md:w-1/2 bg-gray-100">
+                    <iframe
+                        src={pageData.mapEmbedUrl}
+                        width="100%"
+                        height="100%"
+                        className="w-full h-[450px] md:h-full border-0 rounded-r-2xl" /* Increased map height and rounded corner */
+                        loading="lazy"
+                        allowFullScreen
+                        referrerPolicy="no-referrer-when-downgrade"
+                        style={{ borderRadius: '0 0 1rem 0' }} /* Ensure rounded-r-2xl is applied if needed */
+                    ></iframe>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default Contact;
+export default ContactPage;
