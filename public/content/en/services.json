@@ -1,65 +1,65 @@
 {
-    "pageTitle": "Our Services (EN)",
-    "learnMoreText": "Learn More (EN)",
+    "pageTitle": "Our Services ",
+    "learnMoreText": "Learn More ",
     "services": [
       {
-        "title": "Work Opportunity Hiring (EN)",
-        "description": "We connect job seekers with employers, making hiring seamless and efficient. (EN)",
+        "title": "Work Opportunity Hiring ",
+        "description": "We connect job seekers with employers, making hiring seamless and efficient. ",
         "iconName": "FiBriefcase"
       },
       {
-        "title": "Promotions (EN)",
-        "description": "Boost your brand's visibility with our strategic marketing and promotional services. (EN)",
+        "title": "Promotions ",
+        "description": "Boost your brand's visibility with our strategic marketing and promotional services. ",
         "iconName": "FiTrendingUp"
       },
       {
-        "title": "Buying & Selling Goods (EN)",
-        "description": "We facilitate secure and hassle-free transactions for all types of goods. (EN)",
+        "title": "Buying & Selling Goods ",
+        "description": "We facilitate secure and hassle-free transactions for all types of goods. ",
         "iconName": "FiShoppingCart"
       },
       {
-        "title": "Import & Export (EN)",
-        "description": "Expand your business with international trade solutions tailored to your needs. (EN)",
+        "title": "Import & Export ",
+        "description": "Expand your business with international trade solutions tailored to your needs.",
         "iconName": "FiGlobe"
       },
       {
-        "title": "Business Advisory & Promotions (EN)",
-        "description": "We provide expert advice and promotional strategies to help your business grow. (EN)",
+        "title": "Business Advisory & Promotions ",
+        "description": "We provide expert advice and promotional strategies to help your business grow. ",
         "iconName": "FiUsers"
       },
       {
-        "title": "Manpower Services (EN)",
-        "description": "Find skilled workers for your business needs with our manpower solutions. (EN)",
+        "title": "Manpower Services ",
+        "description": "Find skilled workers for your business needs with our manpower solutions. ",
         "iconName": "FiBriefcase"
       },
       {
-        "title": "Home Buying, Selling & Renting (EN)",
-        "description": "Get the best deals on homes for sale, rent, or purchase. (EN)",
+        "title": "Home Buying, Selling & Renting",
+        "description": "Get the best deals on homes for sale, rent, or purchase. ",
         "iconName": "FiHome"
       },
       {
-        "title": "Car Buying, Selling & Renting (EN)",
-        "description": "Whether you’re buying, selling, or renting a car, we have you covered. (EN)",
+        "title": "Car Buying, Selling & Renting ",
+        "description": "Whether you’re buying, selling, or renting a car, we have you covered. ",
         "iconName": "FaCar"
       },
       {
-        "title": "Land Buying & Selling (EN)",
-        "description": "Secure land deals with professional assistance and legal transparency. (EN)",
+        "title": "Land Buying & Selling ",
+        "description": "Secure land deals with professional assistance and legal transparency. ",
         "iconName": "FiMap"
       },
       {
-        "title": "Social Media Management & Promotions (EN)",
-        "description": "Grow your online presence with our expert social media management services. (EN)",
+        "title": "Social Media Management & Promotions ",
+        "description": "Grow your online presence with our expert social media management services. ",
         "iconName": "FiShare2"
       },
       {
-        "title": "Software, Website & Mobile App Development (EN)",
-        "description": "We build modern, scalable software solutions tailored to your business. (EN)",
+        "title": "Software, Website & Mobile App Development ",
+        "description": "We build modern, scalable software solutions tailored to your business. ",
         "iconName": "FiCode"
       },
       {
-        "title": "Advertising Materials (Brochures, Stickers, T-Shirts, LED Screens) (EN)",
-        "description": "Get high-quality advertising materials designed for maximum impact. (EN)",
+        "title": "Advertising Materials (Brochures, Stickers, T-Shirts, LED Screens) ",
+        "description": "Get high-quality advertising materials designed for maximum impact. ",
         "iconName": "FiLayers"
       }
     ]

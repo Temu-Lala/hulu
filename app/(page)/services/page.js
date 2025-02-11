@@ -1,28 +1,38 @@
 "use client";
 
-import { FiBriefcase, FiTrendingUp, FiShoppingCart, FiGlobe, FiUsers, FiHome, FiMap, FiShare2, FiCode, FiLayers } from "react-icons/fi";
+import {
+    FiBriefcase,
+    FiTrendingUp,
+    FiShoppingCart,
+    FiGlobe,
+    FiUsers,
+    FiHome,
+    FiMap,
+    FiShare2,
+    FiCode,
+    FiLayers,
+} from "react-icons/fi";
 import { FaCar } from "react-icons/fa";
-import { motion, useScroll } from "framer-motion";
-import { useState, useRef, useEffect, useContext } from "react"; // Import useEffect and useContext
-import { LanguageContext } from '../../contexts/LanguageContext'; // Import LanguageContext
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useState, useRef, useEffect, useContext } from "react";
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 const ServicesPage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
     const { scrollXProgress } = useScroll({
-        target: ref, // Use the ref of the container
-        offset: ["start end", "end start"] // Optional: Adjust scroll start/end points
+        target: ref,
+        offset: ["start end", "end start"],
     });
-    const [pageData, setPageData] = useState(null); // State for JSON data
+    const [pageData, setPageData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const { language } = useContext(LanguageContext); // Consume language context
-
+    const { language } = useContext(LanguageContext);
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`/content/${language}/services.json`); // Fetch JSON based on language
+                const response = await fetch(`/content/${language}/services.json`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -37,80 +47,77 @@ const ServicesPage = () => {
         };
 
         fetchData();
-    }, [language]); // Re-fetch data when language state from Context changes
-
+    }, [language]);
 
     if (loading) {
-        return <p>Loading content...</p>;
+        return <p className="text-gray-700">Loading content...</p>;
     }
 
     if (!pageData || pageData.error) {
-        return <p>Error loading content.</p>;
+        return <p className="text-red-500">Error loading content.</p>;
     }
 
-
     return (
-        <div className="min-h-screen  flex flex-col items-center justify-center py-12 px-6">
-            <h1 className="text-5xl font-extrabold text-blue-700 mb-10 text-center drop-shadow-lg">
-                {pageData.pageTitle} {/* Page Title from JSON */}
+        <div className="min-h-screen flex flex-col items-center justify-center py-16 px-6 ">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 text-center drop-shadow-md">
+                {pageData.pageTitle}
             </h1>
 
-            {/* Circular Progress Indicator */}
-            <svg id="progress" width="100" height="100" viewBox="0 0 100 100" className="mb-8">
-                <circle cx="50" cy="50" r="30" pathLength="1" className="bg" fill="none" stroke="#e0e0e0" strokeWidth="4"/>
-                <motion.circle
-                    cx="50"
-                    cy="50"
-                    r="30"
-                    pathLength="1"
-                    className="indicator"
-                    fill="none"
-                    stroke="#4f46e5" // Example indicator color
-                    strokeWidth="4"
-                    style={{ pathLength: scrollXProgress }}
-                    transition={{ duration: 0.5 }} // Smooth transition
-                />
-            </svg>
+            {/* Removed Circular Progress Indicator - cleaner UI */}
 
             <div className="relative w-full max-w-7xl">
                 <motion.div
                     ref={ref}
-                    className="flex overflow-x-auto space-x-10 scroll-smooth snap-x snap-mandatory"
-                    style={{scrollSnapType: 'x mandatory'}}
+                    className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory scrollbar-hide"
+                    style={{ scrollSnapType: 'x mandatory' }}
                     animate={{ x: `-${currentIndex * 100}%` }}
                     transition={{ duration: 0.5 }}
                 >
-                    {pageData.services.map((service, index) => (  // Services data from JSON
+                    {pageData.services.map((service, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white shadow-2xl rounded-3xl p-8 w-80 shrink-0 snap-center"
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            className="bg-white shadow-lg rounded-xl p-6 md:p-8 w-80 md:w-96 shrink-0 snap-center"
+                            initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ scale: 1.05, y: -5 }}
+                            transition={{ duration: 0.5, delay: index * 0.07, ease: "easeOut" }}
+                            whileHover={{ scale: 1.03, y: -3, shadow: 'xl' }}
+                            style={{ marginRight: '24px' }}
                         >
                             <div className="flex flex-col items-center text-center">
-                                <div className="mb-5">
-                                    {(() => { // Render icon dynamically based on iconName from JSON
+                                <motion.div
+                                    className="mb-6"
+                                    animate={{
+                                        rotate: [0, -5, 5, -3, 3, 0],
+                                    }}
+                                    transition={{
+                                        duration: 1.5,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                >
+                                    {(() => {
+                                        const iconColorClass = "text-blue-500"; // Define color class here
+                                        const iconSizeClass = "text-5xl md:text-6xl"; // Define size class here
+
                                         switch (service.iconName) {
-                                            case 'FiBriefcase': return <FiBriefcase className="text-blue-500 text-6xl" />;
-                                            case 'FiTrendingUp': return <FiTrendingUp className="text-blue-500 text-6xl" />;
-                                            case 'FiShoppingCart': return <FiShoppingCart className="text-blue-500 text-6xl" />;
-                                            case 'FiGlobe': return <FiGlobe className="text-blue-500 text-6xl" />;
-                                            case 'FiUsers': return <FiUsers className="text-blue-500 text-6xl" />;
-                                            case 'FiHome': return <FiHome className="text-blue-500 text-6xl" />;
-                                            case 'FiMap': return <FiMap className="text-blue-500 text-6xl" />;
-                                            case 'FiShare2': return <FiShare2 className="text-blue-500 text-6xl" />;
-                                            case 'FiCode': return <FiCode className="text-blue-500 text-6xl" />;
-                                            case 'FiLayers': return <FiLayers className="text-blue-500 text-6xl" />;
-                                            case 'FaCar': return <FaCar className="text-blue-500 text-6xl" />;
-                                            default: return null; // Or a default icon
+                                            case 'FiBriefcase': return <FiBriefcase className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiTrendingUp': return <FiTrendingUp className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiShoppingCart': return <FiShoppingCart className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiGlobe': return <FiGlobe className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiUsers': return <FiUsers className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiHome': return <FiHome className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiMap': return <FiMap className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiShare2': return <FiShare2 className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiCode': return <FiCode className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FiLayers': return <FiLayers className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            case 'FaCar': return <FaCar className={`${iconColorClass} ${iconSizeClass}`} />;
+                                            default: return null;
                                         }
                                     })()}
-                                </div>
-                                <h3 className="text-xl font-semibold text-blue-700">{service.title}</h3> {/* Service title from JSON */}
-                                <p className="mt-3 text-gray-600">{service.description}</p> {/* Service description from JSON */}
-                                <a href="#" className="text-blue-600 hover:underline mt-3">{pageData.learnMoreText}</a> {/* "Learn More" text from JSON */}
+                                </motion.div>
+                                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                                <p className="text-gray-600 text-sm md:text-base">{service.description}</p>
+                                <a href="#" className="text-blue-500 hover:underline mt-3 text-sm md:text-base font-medium">{pageData.learnMoreText}</a>
                             </div>
                         </motion.div>
                     ))}

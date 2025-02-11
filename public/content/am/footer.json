@@ -1,12 +1,12 @@
 {
-    "companyName": "ሁሉ አጠቃላይ ኮሚሽን (AM)",
-    "contactUsTitle": "ያግኙን (AM)",
+    "companyName": "ሁሉ አጠቃላይ ኮሚሽን",
+    "contactUsTitle": "ያግኙን",
     "contactEmail": "hulugeneralcommission@gmail.com",
     "phoneNumbers": [
-      { "number": "+251960380000", "label": "ስልክ 1 (AM)" },
-      { "number": "+251963959694", "label": "ስልክ 2 (AM)" },
-      { "number": "+251967336700", "label": "ስልክ 3 (AM)" },
-      { "number": "+251960380000", "label": "ስልክ 4 (AM)" }
+      { "number": "+251960380000", "label": "ስልክ 1" },
+      { "number": "+251963959694", "label": "ስልክ 2" },
+      { "number": "+251967336700", "label": "ስልክ 3" },
+      { "number": "+251960380000", "label": "ስልክ 4" }
     ],
     "socialLinks": [
       { "link": "https://www.tiktok.com/@hulugeneralcommission?_t=ZM-8tkGXhB64Af&_r=1", "iconName": "FaTiktok" },
@@ -16,6 +16,6 @@
       { "link": "https://www.instagram.com/hulugeneralcommission?igsh=YzExcWtxOHd0dTN1", "iconName": "FaInstagram" },
       { "link": "https://twitter.com/hulugeneral", "iconName": "FaTwitter" }
     ],
-    "copyrightText": "2025 ሁሉ አጠቃላይ ኮሚሽን (AM)",
-    "rightsReservedText": "ሁሉም መብቶች የተጠበቁ ናቸው። (AM)"
+    "copyrightText": "2025 ሁሉ አጠቃላይ ኮሚሽን ",
+    "rightsReservedText": "ሁሉም መብቶች የተጠበቁ ናቸው። "
   }
