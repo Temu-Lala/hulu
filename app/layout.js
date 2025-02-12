@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -30,12 +29,12 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-500 text-white`}>
                 <LanguageContextProvider>
                     <Navbar />
                     {loading ? (
                         <motion.div
-                            className="flex flex-col items-center justify-center h-screen bg-white fixed top-0 left-0 right-0 bottom-0 z-50"
+                            className="flex flex-col items-center justify-center h-screen bg-blue-500 fixed top-0 left-0 right-0 bottom-0 z-50"
                             initial={{ opacity: 1 }}
                             animate={{ opacity: 0 }}
                             transition={{ duration: 1, delay: 3 }}
@@ -56,7 +55,7 @@ export default function RootLayout({ children }) {
                                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                             />
                             <motion.p
-                                className="mt-4 text-lg font-semibold text-gray-700"
+                                className="mt-4 text-lg font-semibold text-gray-200"
                                 animate={{ opacity: [0.5, 1, 0.5] }}
                                 transition={{ repeat: Infinity, duration: 1 }}
                             >

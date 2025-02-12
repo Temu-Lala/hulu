@@ -52,7 +52,7 @@ export default function Footer() {
 
 
     return (
-        <footer className="text-blue-600 py-12 mt-16">
+        <footer className=" py-12 mt-16">
             <div className="container mx-auto px-6">
                 {/* Company Logo and Name */}
                 <div className="flex justify-between items-center mb-8">
@@ -76,7 +76,7 @@ export default function Footer() {
                             href={social.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-16 h-16 flex items-center justify-center bg-white text-blue-600 rounded-full shadow-lg transform hover:scale-110 transition-all duration-300"
+                            className="w-16 h-16 flex items-center justify-center bg-transparent rounded-full shadow-lg transform hover:scale-110 transition-all duration-300"
                             whileHover={{ y: -5 }}
                         >
                             {(() => { // Render icon dynamically based on iconName from JSON
@@ -103,7 +103,7 @@ export default function Footer() {
                             <motion.a
                                 key={index}
                                 href={`tel:${phone.number}`}
-                                className="w-16 h-16 flex items-center justify-center bg-blue-500 text-white rounded-full shadow-lg transform scale-110 transition-all duration-300"
+                                className="w-16 h-16 flex items-center justify-center bg-transparent   rounded-full shadow-lg transform scale-110 transition-all duration-300"
                                 animate={{ rotate: [0, 3, -3, 0] }}
                                 transition={{ repeat: Infinity, duration: 0.5 }}
                             >

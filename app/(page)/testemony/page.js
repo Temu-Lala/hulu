@@ -47,7 +47,7 @@ const Testimonials = () => {
     return (
         <section className="py-16 ">
             <div className="max-w-screen-xl mx-auto px-6 text-center">
-                <h2 className="text-3xl font-extrabold text-blue-700 mb-8">{pageData.pageTitle}</h2> {/* Page title from JSON */}
+                <h2 className="text-3xl font-extrabold mb-8">{pageData.pageTitle}</h2> {/* Page title from JSON */}
 
                 <motion.div
                     className="flex space-x-6 pb-4 overflow-hidden"
@@ -68,7 +68,7 @@ const Testimonials = () => {
                         {pageData.testimonials.map((testimonial, index) => ( // Testimonials from JSON
                             <motion.div
                                 key={index}
-                                className="bg-white p-8 rounded-lg shadow-xl w-80 flex-none transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                className=" p-8 rounded-lg shadow-xl w-80 flex-none transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -80,21 +80,21 @@ const Testimonials = () => {
                                         className="w-40 h-40 rounded-full object-cover border-4 border-blue-500"
                                     />
                                 </div>
-                                <p className="text-xl font-semibold text-blue-700">{testimonial.name}</p> {/* Testimonial name from JSON */}
-                                <p className="text-sm text-gray-500">{testimonial.role}</p> {/* Testimonial role from JSON */}
-                                <div className="mt-4 text-gray-600 italic">{testimonial.feedback}</div> {/* Testimonial feedback from JSON */}
+                                <p className="text-xl font-semibold ">{testimonial.name}</p> {/* Testimonial name from JSON */}
+                                <p className="text-sm  ">{testimonial.role}</p> {/* Testimonial role from JSON */}
+                                <div className="mt-4  italic">{testimonial.feedback}</div> {/* Testimonial feedback from JSON */}
                                 <div className="mt-4 flex justify-center items-center space-x-2">
                                     <span>
                                         {(() => { // Render icon dynamically based on iconName from JSON
                                             switch (testimonial.iconName) {
-                                                case 'FaThumbsUp': return <FaThumbsUp size={24} className="text-blue-500" />;
-                                                case 'FaSmile': return <FaSmile size={24} className="text-blue-500" />;
-                                                case 'FaStar': return <FaStar size={24} className="text-blue-500" />;
+                                                case 'FaThumbsUp': return <FaThumbsUp size={24} className="" />;
+                                                case 'FaSmile': return <FaSmile size={24} className="" />;
+                                                case 'FaStar': return <FaStar size={24} className="" />;
                                                 default: return null; // Or a default icon
                                             }
                                         })()}
                                     </span>
-                                    <span className="text-xl text-blue-500">{testimonial.rating}</span> {/* Testimonial rating from JSON */}
+                                    <span className="text-xl ">{testimonial.rating}</span> {/* Testimonial rating from JSON */}
                                 </div>
                             </motion.div>
                         ))}

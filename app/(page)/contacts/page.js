@@ -1,8 +1,8 @@
 "use client";
 
-
 import { useState, useContext, useEffect } from "react";
-import { LanguageContext } from '../../contexts/LanguageContext';
+import { motion } from "framer-motion";
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 const ContactPage = () => {
     const [email, setEmail] = useState("");
@@ -40,75 +40,90 @@ const ContactPage = () => {
     };
 
     if (loading) {
-        return <p className="text-center">Loading content...</p>;
+        return <p className="text-center text-xl font-semibold">Loading content...</p>;
     }
 
     if (!pageData || pageData.error) {
-        return <p className="text-center">Error loading content.</p>;
+        return <p className="text-center text-xl text-red-500">Error loading content.</p>;
     }
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center py-10 px-4 bg-gray-50"> {/* Added bg-gray-50 for subtle background */}
+        <div className="min-h-screen flex flex-col items-center justify-center py-10 px-4  text-white">
             {/* Header */}
-            <div className="text-center mb-12"> {/* Increased mb for more space */}
-                <h1 className="text-4xl font-extrabold text-blue-700 mb-4">{pageData.pageTitle}</h1> {/* Reduced mb here */}
-                <p className="text-lg text-gray-700 max-w-md mx-auto">{pageData.pageDescription}</p> {/* Improved text color and max-width for better readability */}
-            </div>
+            <motion.div 
+                className="text-center mb-12" 
+                initial={{ opacity: 0, y: -30 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ duration: 0.8 }}
+            >
+                <h1 className="text-5xl font-extrabold drop-shadow-lg mb-4">{pageData.pageTitle}</h1>
+                <p className="text-lg max-w-md mx-auto opacity-80">{pageData.pageDescription}</p>
+            </motion.div>
 
             {/* Contact Container */}
-            <div className="max-w-screen-lg w-full flex flex-col md:flex-row bg-white shadow-xl rounded-2xl overflow-hidden md:space-x-8"> {/* Increased shadow, rounded corners, and horizontal spacing */}
-
+            <motion.div 
+                className="max-w-screen-lg w-full flex flex-col md:flex-row  bg-opacity-80 backdrop-blur-lg shadow-2xl rounded-2xl overflow-hidden md:space-x-8 p-8"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+            >
                 {/* Left Side: Contact Form */}
-                <div className="w-full md:w-1/2 p-8 md:p-10 bg-blue-100 text-blue-800"> {/* Softened blue background and text color */}
-                    <h2 className="text-2xl font-semibold mb-8">{pageData.formTitle}</h2> {/* Increased mb */}
-                    <form onSubmit={handleSubmit} className="space-y-6"> {/* Increased space-y */}
+                <div className="w-full md:w-1/2">
+                    <h2 className="text-3xl font-semibold mb-6">{pageData.formTitle}</h2>
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="email" className="block text-lg font-medium mb-2">{pageData.emailLabel}</label> {/* Added mb to label */}
+                            <label htmlFor="email" className="block text-lg font-medium mb-2">{pageData.emailLabel}</label>
                             <input
                                 id="email"
                                 type="email"
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full p-3 mt-1 rounded-md bg-white text-black border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-300" /* Refined input styling */
-                                placeholder="Your Email" /* Added placeholder */
+                                className="w-full p-3 mt-1 rounded-md  border  focus:ring-2 focus:ring-blue-400 focus:border-blue-300 transition-transform transform hover:scale-105"
+                                placeholder="Your Email"
                             />
                         </div>
                         <div>
-                            <label htmlFor="message" className="block text-lg font-medium mb-2">{pageData.messageLabel}</label> {/* Added mb to label */}
+                            <label htmlFor="message" className="block text-lg font-medium mb-2">{pageData.messageLabel}</label>
                             <textarea
                                 id="message"
                                 required
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                className="w-full p-3 mt-1 rounded-md bg-white text-black border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-300" /* Refined textarea styling */
-                                rows={5} /* Increased rows for message */
-                                placeholder="Your Message" /* Added placeholder */
+                                className="w-full p-3 mt-1 rounded-md  border  focus:ring-2 focus:ring-blue-400 focus:border-blue-300 transition-transform transform hover:scale-105"
+                                rows={5}
+                                placeholder="Your Message"
                             />
                         </div>
-                        <button
+                        <motion.button
                             type="submit"
-                            className="w-full mt-6 p-3 bg-blue-700 text-white font-bold rounded-md hover:bg-blue-800 transition duration-300 shadow-md focus:shadow-lg" /* Refined button styling with hover and focus effects */
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="w-full mt-6 p-3  text-white font-bold rounded-md transition-all duration-300 shadow-lg hover:bg-blue-700 focus:shadow-xl"
                         >
                             {pageData.submitButtonText}
-                        </button>
+                        </motion.button>
                     </form>
                 </div>
 
                 {/* Right Side: Map */}
-                <div className="w-full md:w-1/2 bg-gray-100">
+                <motion.div 
+                    className="w-full md:w-1/2"
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                >
                     <iframe
                         src={pageData.mapEmbedUrl}
                         width="100%"
                         height="100%"
-                        className="w-full h-[450px] md:h-full border-0 rounded-r-2xl" /* Increased map height and rounded corner */
+                        className="w-full h-[450px] md:h-full border-0 rounded-r-2xl shadow-lg"
                         loading="lazy"
                         allowFullScreen
                         referrerPolicy="no-referrer-when-downgrade"
-                        style={{ borderRadius: '0 0 1rem 0' }} /* Ensure rounded-r-2xl is applied if needed */
                     ></iframe>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </div>
     );
 };

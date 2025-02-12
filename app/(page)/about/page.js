@@ -141,31 +141,31 @@ const AboutPage = () => {
     };
 
 
-    if (loading) return <div className="min-h-screen bg-gray-50 py-20 px-8 md:px-24 flex justify-center items-center">Loading About Content...</div>;
-    if (!pageData || pageData.error) return <div className="min-h-screen bg-gray-50 py-20 px-8 md:px-24 flex justify-center items-center">Error loading About Content.</div>;
+    if (loading) return <div className="min-h-screen  py-20 px-8 md:px-24 flex justify-center items-center">Loading About Content...</div>;
+    if (!pageData || pageData.error) return <div className="min-h-screen  py-20 px-8 md:px-24 flex justify-center items-center">Error loading About Content.</div>;
 
     return (
         <motion.div
             className="min-h-screen bg-cover bg-center py-20 px-8 md:px-24 relative"
-            style={{ backgroundImage: "url('/handshake.gif')" }}
+          
             initial="hidden"
             animate="visible"
             variants={itemVariants} // Using itemVariants for the page container itself
         >
             {/* Overlay for background GIF */}
-            <div className="absolute inset-0 bg-white bg-opacity-70 backdrop-blur-sm"></div>
+            <div className="absolute inset-0  "></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Hero Section */}
                 <motion.div variants={itemVariants} className="mb-16 text-center">
                     <motion.h1
-                        className="text-4xl md:text-6xl font-extrabold mb-4 text-blue-800"
+                        className="text-4xl md:text-6xl font-extrabold mb-4 "
                         style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.1)" }}
                     >
                         {pageData.heroSection?.title}
                     </motion.h1>
                     <motion.p
-                        className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-2xl mx-auto"
+                        className="text-lg md:text-xl leading-relaxed  max-w-2xl mx-auto"
                         style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.1)" }}
                     >
                         {pageData.heroSection?.description}
@@ -185,10 +185,10 @@ const AboutPage = () => {
                         variants={cardVariants}
                         whileHover="hover"
                         animate="autoAnimate"
-                        className="rounded-xl p-8 bg-white shadow-md hover:shadow-xl transform-3d transition-all duration-300"
+                        className="rounded-xl p-8  shadow-md hover:shadow-xl transform-3d transition-all duration-300"
                     >
                         <motion.div
-                            className="text-4xl text-blue-700 mb-4 mx-auto inline-block"
+                            className="text-4xl  mb-4 mx-auto inline-block"
                             variants={iconVariants}
                             initial="hidden" // Icon entrance animation
                             whileInView="visible" // Icon entrance animation
@@ -197,8 +197,8 @@ const AboutPage = () => {
                         >
                             <FaMapMarkerAlt />
                         </motion.div>
-                        <h3 className="text-xl font-bold mb-2 text-blue-800">{pageData.storySection?.title}</h3>
-                        <p className="text-gray-700">{pageData.storySection?.description}</p>
+                        <h3 className="text-xl font-bold mb-2 ">{pageData.storySection?.title}</h3>
+                        <p className="">{pageData.storySection?.description}</p>
                     </motion.div>
 
                     {/* Mission Card */}
@@ -206,10 +206,10 @@ const AboutPage = () => {
                         variants={cardVariants}
                         whileHover="hover"
                         animate="autoAnimate"
-                        className="rounded-xl p-8 bg-white shadow-md hover:shadow-xl transform-3d transition-all duration-300"
+                        className="rounded-xl p-8  shadow-md hover:shadow-xl transform-3d transition-all duration-300"
                     >
                         <motion.div
-                            className="text-4xl text-blue-700 mb-4 mx-auto inline-block"
+                            className="text-4xl text-white mb-4 mx-auto inline-block"
                             variants={iconVariants}
                             initial="hidden" // Icon entrance animation
                             whileInView="visible" // Icon entrance animation
@@ -218,8 +218,8 @@ const AboutPage = () => {
                         >
                             <FaRegLightbulb />
                         </motion.div>
-                        <h3 className="text-xl font-bold mb-2 text-blue-800">{pageData.missionSection?.title}</h3>
-                        <p className="text-gray-700">{pageData.missionSection?.description}</p>
+                        <h3 className="text-xl font-bold mb-2 text-white">{pageData.missionSection?.title}</h3>
+                        <p className="">{pageData.missionSection?.description}</p>
                     </motion.div>
 
                     {/* Values Card */}
@@ -227,10 +227,10 @@ const AboutPage = () => {
                         variants={cardVariants}
                         whileHover="hover"
                         animate="autoAnimate"
-                        className="rounded-xl p-8 bg-white shadow-md hover:shadow-xl transform-3d transition-all duration-300"
+                        className="rounded-xl p-8  shadow-md hover:shadow-xl transform-3d transition-all duration-300"
                     >
                         <motion.div
-                            className="text-4xl text-blue-700 mb-4 mx-auto inline-block"
+                            className="text-4xl  mb-4 mx-auto inline-block"
                             variants={iconVariants}
                             initial="hidden" // Icon entrance animation
                             whileInView="visible" // Icon entrance animation
@@ -239,8 +239,8 @@ const AboutPage = () => {
                         >
                             <FaHandshake />
                         </motion.div>
-                        <h3 className="text-xl font-bold mb-2 text-blue-800">{pageData.valuesSection?.title}</h3>
-                        <ul className="text-gray-700 list-disc pl-5">
+                        <h3 className="text-xl font-bold mb-2 ">{pageData.valuesSection?.title}</h3>
+                        <ul className=" list-disc pl-5">
                             {pageData.valuesSection?.values?.map((value, index) => (
                                 <li key={index} className="mb-1">{value}</li>
                             ))}
@@ -262,7 +262,7 @@ const AboutPage = () => {
                             variants={cardVariants}
                             whileHover="hover"
                             animate="autoAnimate"
-                            className="rounded-xl p-8 bg-white shadow-md hover:shadow-xl transform-3d transition-all duration-300"
+                            className="rounded-xl p-8  shadow-md hover:shadow-xl transform-3d transition-all duration-300"
                         >
                             <div className="flex justify-center mb-4">
                                 <img
@@ -271,9 +271,9 @@ const AboutPage = () => {
                                     className="w-32 h-32 rounded-full border-4 border-blue-200 shadow-md"
                                 />
                             </div>
-                            <h3 className="text-xl font-bold mb-2 text-blue-800">{member.name}</h3>
-                            <p className="text-gray-700">{member.role}</p>
-                            <p className="text-gray-700 mt-4">{member.description}</p>
+                            <h3 className="text-xl font-bold mb-2 text-white">{member.name}</h3>
+                            <p className="text-white">{member.role}</p>
+                            <p className="text-white mt-4">{member.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -290,10 +290,10 @@ const AboutPage = () => {
                         variants={cardVariants}
                         whileHover="hover"
                         animate="autoAnimate"
-                        className="rounded-xl p-8 bg-white shadow-md hover:shadow-xl transform-3d transition-all duration-300 text-center md:col-span-2 lg:col-span-1"
+                        className="rounded-xl p-8  shadow-md hover:shadow-xl transform-3d transition-all duration-300 text-center md:col-span-2 lg:col-span-1"
                     >
                         <motion.div
-                            className="text-4xl text-blue-700 mb-4 mx-auto inline-block"
+                            className="text-4xl text-white mb-4 mx-auto inline-block"
                             variants={iconVariants}
                             initial="hidden" // Icon entrance animation
                             whileInView="visible" // Icon entrance animation
@@ -302,15 +302,15 @@ const AboutPage = () => {
                         >
                             <FaTrophy />
                         </motion.div>
-                        <h3 className="text-xl font-bold mb-2 text-blue-800">{pageData.achievementsSection?.title}</h3>
-                        <p className="text-gray-700">{pageData.achievementsSection?.description}</p>
+                        <h3 className="text-xl font-bold mb-2 ">{pageData.achievementsSection?.title}</h3>
+                        <p className=" text-white">{pageData.achievementsSection?.description}</p>
                     </motion.div>
                 </motion.div>
 
                 {/* Call to Action */}
                 <motion.div variants={itemVariants} className="text-center mb-16">
                     <motion.h2
-                        className="text-3xl md:text-4xl font-bold mb-4 text-blue-800"
+                        className="text-3xl md:text-4xl font-bold mb-4 "
                         style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.1)" }}
                     >
                         {pageData.ctaSection?.title}
@@ -318,7 +318,7 @@ const AboutPage = () => {
                     <motion.button
                         whileHover={{ scale: 1.1, boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transition-shadow duration-200"
+                        className=" text-white font-bold py-3 px-8 rounded-full text-lg shadow-md transition-shadow duration-200"
                     >
                         {pageData.ctaSection?.buttonText}
                     </motion.button>

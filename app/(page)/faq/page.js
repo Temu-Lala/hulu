@@ -62,14 +62,14 @@ const FAQ = () => {
 
     return (
         <div className="min-h-screen  flex flex-col items-center justify-center py-10 px-4">
-            <h1 className="text-4xl font-extrabold text-blue-700 mb-8 text-center">
+            <h1 className="text-4xl font-extrabold  mb-8 text-center">
                 {pageData.pageTitle} {/* Page title from JSON */}
             </h1>
             <div className="flex flex-wrap justify-center gap-6 max-w-6xl">
                 {pageData.faqs.map((faq, index) => ( // FAQs from JSON
                     <div
                         key={index}
-                        className="bg-white shadow-xl rounded-xl p-6 w-80 transition-transform transform hover:scale-105 flex flex-col items-center text-center"
+                        className="bg-transparent shadow-xl rounded-xl p-6 w-80 transition-transform transform hover:scale-105 flex flex-col items-center text-center"
                     >
                         {/* Icon at the Top */}
                         <div className="mb-3">
@@ -89,23 +89,23 @@ const FAQ = () => {
                         </div>
 
                         {/* Question */}
-                        <h3 className="text-lg font-semibold text-blue-700">{faq.question}</h3> {/* FAQ question from JSON */}
+                        <h3 className="text-lg font-semibold">{faq.question}</h3> {/* FAQ question from JSON */}
 
                         {/* Expand Button */}
                         <button
                             onClick={() => toggleFAQ(index)}
-                            className="mt-3 flex justify-center items-center w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 transition"
+                            className="mt-3 flex justify-center items-center w-10 h-10 rounded-full bg-transparent hover:bg-blue-200 transition"
                         >
                             {openIndex === index ? (
-                                <FiChevronUp className="text-blue-700 text-2xl" />
+                                <FiChevronUp className="text-2xl" />
                             ) : (
-                                <FiChevronDown className="text-blue-700 text-2xl" />
+                                <FiChevronDown className="text-2xl" />
                             )}
                         </button>
 
                         {/* Answer (Only Show When Open) */}
                         {openIndex === index && (
-                            <p className="mt-3 text-gray-600 text-md leading-relaxed animate-fade-in">
+                            <p className="mt-3   text-md leading-relaxed animate-fade-in">
                                 {faq.answer} {/* FAQ answer from JSON */}
                             </p>
                         )}

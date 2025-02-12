@@ -105,13 +105,13 @@ const LandingPage = () => {
 
 
     return (
-        <div className="font-sans text-gray-800 bg-fixed bg-cover pt-12 bg-center" style={{ backgroundImage: "url('/handshake.gif')" }}>
+        <div className="font-sans   pt-12 " >
             <Navbar />
 
-            <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between bg-blue-50 px-6 py-16 bg-opacity-80">
+            <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between  text-white px-6 py-16 bg-opacity-80">
                 <div className="w-full lg:w-1/2 space-y-6">
                     <motion.h1
-                        className="text-4xl md:text-5xl font-extrabold text-blue-700"
+                        className="text-4xl md:text-5xl font-extrabold  "
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
@@ -120,7 +120,7 @@ const LandingPage = () => {
                     </motion.h1>
 
                     <motion.p
-                        className="text-base sm:text-lg text-gray-600"
+                        className="text-base sm:text-lg "
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
@@ -167,29 +167,29 @@ const LandingPage = () => {
 
             </section>
 
-            <section className="py-16 bg-white text-center">
+            <section className="py-16   text-center">
                 <div className="max-w-screen-xl mx-auto px-6">
-                    <h2 className="text-3xl font-extrabold text-blue-700 mb-6">{pageData.impactSection?.heading}</h2> {/* Impact section heading from JSON - Optional chaining */}
+                    <h2 className="text-3xl font-extrabold   mb-6">{pageData.impactSection?.heading}</h2> {/* Impact section heading from JSON - Optional chaining */}
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
                         {pageData.impactSection?.stats?.map((item, index) => (  // Impact stats from JSON - Optional chaining
                             <motion.div
                                 key={index}
-                                className="bg-blue-100 p-6 rounded-lg shadow-md"
+                                className="  p-6 rounded-lg shadow-md"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 1, delay: (index + 1) * 0.2 }}
                             >
-                                <p className="text-3xl font-semibold text-blue-700">{item.count}+ </p>
-                                <p className="text-lg text-gray-600">{item.label}</p>
+                                <p className="text-3xl font-semibold  ">{item.count}+ </p>
+                                <p className="text-lg ">{item.label}</p>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="py-16 bg-blue-50">
+            <section className="py-16 ">
                 <div className="max-w-screen-xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-extrabold text-blue-700 mb-6">{pageData.trustedSection?.heading}</h2> {/* Trusted section heading from JSON - Optional chaining */}
+                    <h2 className="text-3xl font-extrabold   mb-6">{pageData.trustedSection?.heading}</h2> {/* Trusted section heading from JSON - Optional chaining */}
                     <motion.div
                         className="flex overflow-x-auto pb-4"
                         initial={{ opacity: 0 }}
