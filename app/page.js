@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useContext } from "react"; // Import useContext
+import { useState, useEffect, useContext, useRef } from "react";
 import { motion } from "framer-motion";
-import Image from 'next/image'; // Import Image
+import Image from "next/image";
 
 import AboutPage from "./(page)/about/page";
 import BlogPage from "./(page)/blog/page";
@@ -10,10 +10,9 @@ import ContactPage from "./(page)/contacts/page";
 import FAQ from "./(page)/faq/page";
 import ServicesPage from "./(page)/services/page";
 import Testimonials from "./(page)/testemony/page";
-import Footer from "./components/footer/page"; // Assuming Footer component path
+import Footer from "./components/footer/page";
 import Navbar from "./components/navbar/page";
-import { LanguageContext } from './contexts/LanguageContext'; // Import LanguageContext
-
+import { LanguageContext } from "./contexts/LanguageContext";
 
 const trustedCompanies = [
     "/images/image.png",
@@ -35,57 +34,69 @@ const trustedCompanies = [
     "/images/images19.png",
     "/images/images20.jpg",
     "/images/images21.png",
-    "/images/images8.png",
 ];
 
-const LandingPage = () => {
-    const [clients, setClients] = useState(0);
-    const [customers, setCustomers] = useState(0);
-    const [orders, setOrders] = useState(0);
-    const [projects, setProjects] = useState(0);
-    const [pageData, setPageData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const { language } = useContext(LanguageContext); // Consume language context
-
+// Custom Hook for a 1-minute slow counting animation
+const useCountAnimation = (targetValue, duration = 60000) => {
+    const [count, setCount] = useState(0);
+    const startTimeRef = useRef(null);
 
     useEffect(() => {
-        const clientCountInterval = setInterval(() => {
-            if (clients < 500) setClients((prev) => Math.min(prev + 10, 500)); // Increased target to 500
-        }, 50);
+        let animationFrameId;
 
-        const customerCountInterval = setInterval(() => {
-            if (customers < 50000) setCustomers((prev) => Math.min(prev + 1000, 50000));
-        }, 30);
+        const animateCounter = (timestamp) => {
+            if (!startTimeRef.current) {
+                startTimeRef.current = timestamp;
+            }
 
-        const orderCountInterval = setInterval(() => {
-            if (orders < 100000) setOrders((prev) => Math.min(prev + 1000, 100000));
-        }, 40);
+            const elapsed = timestamp - startTimeRef.current;
+            const progress = Math.min(elapsed / duration, 1);
+            const nextCount = Math.floor(targetValue * progress);
 
-        const projectCountInterval = setInterval(() => {
-            if (projects < 34) setProjects((prev) => Math.min(prev + 1, 34));
-        }, 200);
+            setCount(nextCount);
 
-        return () => {
-            clearInterval(clientCountInterval);
-            clearInterval(customerCountInterval);
-            clearInterval(orderCountInterval);
-            clearInterval(projectCountInterval);
+            if (progress < 1) {
+                animationFrameId = requestAnimationFrame(animateCounter);
+            } else {
+                setCount(targetValue);
+            }
         };
-    }, [clients, customers, orders, projects]);
+
+        animationFrameId = requestAnimationFrame(animateCounter);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [targetValue, duration]);
+
+    return count;
+};
+
+const LandingPage = () => {
+    const [pageData, setPageData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [fetchError, setFetchError] = useState(false);
+    const { language } = useContext(LanguageContext);
+
+    // Define target values with a 1-minute duration
+    const clients = useCountAnimation(500, 60000);
+    const customers = useCountAnimation(50000, 60000);
+    const orders = useCountAnimation(100000, 60000);
+    const projects = useCountAnimation(34, 60000);
+
+    const formatCount = (count) => count.toLocaleString();
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
+            setFetchError(false);
             try {
                 const response = await fetch(`/content/${language}/index.json`);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
                 const jsonData = await response.json();
                 setPageData(jsonData);
             } catch (error) {
                 console.error("Could not fetch content:", error);
-                setPageData({ error: "Failed to load content." });
+                setFetchError(true);
             } finally {
                 setLoading(false);
             }
@@ -94,128 +105,98 @@ const LandingPage = () => {
         fetchData();
     }, [language]);
 
+    if (loading) return <p>Loading content...</p>;
 
-    if (loading) {
-        return <p>Loading content...</p>;
+    if (fetchError) {
+        return (
+            <div className="text-center py-10">
+                <p>Error loading content.</p>
+                <button onClick={() => window.location.reload()} className="px-4 py-2 bg-blue-500 text-white rounded">
+                    Retry
+                </button>
+            </div>
+        );
     }
-
-    if (!pageData || pageData.error) {
-        return <p>Error loading content.</p>;
-    }
-
 
     return (
-        <div className="font-sans   pt-12 " >
+        <div className="font-sans pt-12">
             <Navbar />
 
-            <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between  text-white px-6 py-16 bg-opacity-80">
+            {/* Hero Section */}
+            <section className="min-h-screen flex flex-col lg:flex-row items-center justify-between text-white px-6 py-16 bg-opacity-80">
                 <div className="w-full lg:w-1/2 space-y-6">
                     <motion.h1
-                        className="text-4xl md:text-5xl font-extrabold  "
+                        className="text-4xl md:text-5xl font-extrabold"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 5 }}
                     >
-                        {pageData.heroSection?.title} {/* Hero section title from JSON - Optional chaining for safety */}
+                        {pageData?.heroSection?.title}
                     </motion.h1>
-
                     <motion.p
-                        className="text-base sm:text-lg "
+                        className="text-base sm:text-lg"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.2 }}
+                        transition={{ duration: 5, delay: 0.5 }}
                     >
-                        {pageData.heroSection?.description} {/* Hero section description from JSON - Optional chaining for safety */}
+                        {pageData?.heroSection?.description}
                     </motion.p>
-
-                    <motion.div
-                        className="space-y-4"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.4 }}
-                    >
-                        {/* You can add buttons or other elements here if needed */}
-                    </motion.div>
                 </div>
 
                 <div className="w-full flex-1 lg:w-1/2 relative mt-12 lg:mt-0">
                     <motion.div
-                        className="absolute inset-0 flex flex-col items-center justify-center space-y-4"
+                        className="relative flex flex-col items-center justify-center space-y-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.2 }}
+                        transition={{ duration: 5, delay: 0.5 }}
                     >
-                        <Image
-                            src="/hululogo.png"
-                            alt="Our Services"
-                            layout="intrinsic"
-                            width={500}
-                            height={500}
-                            className="rounded-lg shadow-xl"
-                        />
-
-                        <Image
-                            src="/huluname.png"
-                            alt="Our Services"
-                            layout="intrinsic"
-                            width={500}
-                            height={500}
-                            className="rounded-lg shadow-xl"
-                        />
+                        <Image src="/hululogo.png" alt="Our Services" width={500} height={500} className="rounded-lg shadow-xl" />
+                        <Image src="/huluname.png" alt="Our Services" width={500} height={500} className="rounded-lg shadow-xl" />
                     </motion.div>
                 </div>
-
             </section>
 
-            <section className="py-16   text-center">
+            {/* Impact Section */}
+            <section className="py-16 text-center">
                 <div className="max-w-screen-xl mx-auto px-6">
-                    <h2 className="text-3xl font-extrabold   mb-6">{pageData.impactSection?.heading}</h2> {/* Impact section heading from JSON - Optional chaining */}
+                    <h2 className="text-3xl font-extrabold mb-6">{pageData?.impactSection?.heading}</h2>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                        {pageData.impactSection?.stats?.map((item, index) => (  // Impact stats from JSON - Optional chaining
+                        {[
+                            { count: clients, label: "Clients" },
+                            { count: customers, label: "Customers" },
+                            { count: orders, label: "Orders" },
+                            { count: projects, label: "Projects" },
+                        ].map((item, index) => (
                             <motion.div
                                 key={index}
-                                className="  p-6 rounded-lg shadow-md"
+                                className="p-6 rounded-lg shadow-md"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ duration: 1, delay: (index + 1) * 0.2 }}
+                                transition={{ duration: 10, delay: (index + 1) * 0.5 }}
                             >
-                                <p className="text-3xl font-semibold  ">{item.count}+ </p>
-                                <p className="text-lg ">{item.label}</p>
+                                <p className="text-3xl font-semibold">{formatCount(item.count)}+</p>
+                                <p className="text-lg">{item.label}</p>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="py-16 ">
+            {/* Trusted Companies */}
+            <section className="py-16">
                 <div className="max-w-screen-xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-extrabold   mb-6">{pageData.trustedSection?.heading}</h2> {/* Trusted section heading from JSON - Optional chaining */}
-                    <motion.div
-                        className="flex overflow-x-auto pb-4"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <motion.div
-                            className="flex space-x-6"
-                            animate={{ x: "-100%" }}
-                            transition={{
-                                duration: 20,
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                ease: "linear",
-                            }}
-                        >
-                            {trustedCompanies.map((images, index) => (
-                                <div key={index} className="w-32 flex-shrink-0">
-                                    <img src={images} alt={`Trusted company ${index + 1}`} className="h-16 object-contain" />
-                                </div>
+                    <h2 className="text-3xl font-extrabold mb-6">{pageData?.trustedSection?.heading}</h2>
+                    <motion.div className="flex overflow-x-auto pb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 10 }}>
+                        <div className="flex space-x-6">
+                            {trustedCompanies.map((img, index) => (
+                                <Image key={index} src={img} alt={`Trusted company ${index + 1}`} width={128} height={64} className="h-16 object-contain" />
                             ))}
-                        </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
+            {/* Other Sections */}
             <AboutPage />
             <ServicesPage />
             <FAQ />
