@@ -68,7 +68,7 @@ export default function Navbar() {
     }
 
     return (
-        <header className="fixed top-0 left-0 w-full  backdrop-blur-md shadow-md z-50">
+        <header className="fixed top-0 left-0 w-full text-white  backdrop-blur-md shadow-md z-50">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3">
